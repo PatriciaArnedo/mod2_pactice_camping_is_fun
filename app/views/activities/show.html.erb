@@ -1,0 +1,16 @@
+<h1><%= @activity.name %></h1>
+
+<p>Difficulty: <%= @activity.difficulty %></p>
+
+<p>Campers Signed Up for this Activity:</p> 
+<ul>
+<% @activity.campers.each do |camper| %>
+    <li><%= link_to camper.name, camper_path(camper) %>
+<% end%>
+</ul>
+<br><br>
+
+
+
+<p><%= link_to "Back to All activities", activities_path %></p>
+<p><%= link_to "Sign Up for an Activity", new_sign_up_path %></p>

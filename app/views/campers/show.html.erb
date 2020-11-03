@@ -1,0 +1,17 @@
+<h1><%= @camper.name %></h1>
+
+<p>Age: <%= @camper.age %></p>
+
+<p>Activities</p>
+<ul>
+<% @camper.activities.each do |activity| %>
+    <li><%= link_to activity.name, activity_path(activity) %>
+<% end%>
+</ul>
+
+<br><br>
+<p><%= link_to "Back to All Campers", campers_path %></p>
+<p><%= link_to "Sign Up for an Activity", new_sign_up_path %></p>
+<br>
+<p><%= link_to "Edit Camper", edit_camper_path %></p>
+<p><%= button_to "Delete Camper", camper_path, method: :delete %></p>
