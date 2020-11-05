@@ -6,7 +6,7 @@ class SignUpsController < ApplicationController
   def create
     @signup = SignUp.new(signup_params)
     if @signup.save
-      redirect_to camper_path(@signup.camper_id)
+      redirect_to camper_path(@signup.camper)
     else
       flash[:errors] = @signup.errors.full_messages
       redirect_to new_sign_up_path
